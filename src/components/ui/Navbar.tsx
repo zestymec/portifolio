@@ -64,7 +64,7 @@ export function Navbar() {
 
         <nav className="glass-nav mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3">
 
-          <Link href="/" className="group flex min-w-0 items-center gap-2">
+          <Link href="/" className="group flex min-w-0 cursor-pointer items-center gap-2 hover:opacity-90">
 
             <div className="flex h-8 w-8 min-[320px]:h-9 min-[320px]:w-9 shrink-0 items-center justify-center rounded-xl bg-[#C4F042] font-pixel text-[8px] text-[#0B0B1A] min-[320px]:text-[9px]">
 
@@ -104,7 +104,7 @@ export function Navbar() {
 
                 className={cn(
 
-                  "relative rounded-full px-2.5 py-2 text-xs font-semibold transition-colors xl:px-3 xl:text-sm",
+                  "relative cursor-pointer rounded-full px-2.5 py-2 text-xs font-semibold transition-colors hover:opacity-80 xl:px-3 xl:text-sm",
 
                   isActiveRoute(pathname, link.href)
 

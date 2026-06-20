@@ -21,7 +21,7 @@ export default function HomePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`group glass-card rounded-3xl p-5 transition-all hover:-translate-y-1 hover:shadow-glow sm:p-6 md:hover:rotate-1 ${
+                className={`group glass-card cursor-pointer rounded-3xl p-5 transition-all hover:-translate-y-1 hover:opacity-90 hover:shadow-glow sm:p-6 md:hover:rotate-1 ${
                   i % 2 === 0 ? "md:-rotate-1" : "md:rotate-1"
                 }`}
               >

@@ -100,7 +100,7 @@ function FormField({
 
         className={cn(
 
-          "box-border w-full max-w-full rounded-2xl border-2 border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground",
+          "box-border w-full max-w-full cursor-text rounded-2xl border-2 border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground",
 
           "placeholder:text-muted/50 transition-colors",
 

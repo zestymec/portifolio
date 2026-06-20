@@ -1,4 +1,5 @@
 import type { GitHubRepo, Project, ProjectCategory } from "@/types";
+import { getProjectCoverImage } from "@/lib/images";
 
 const GITHUB_API_URL =
   "https://api.github.com/users/zestymec/repos?per_page=100&sort=updated";
@@ -10,43 +11,54 @@ function inferCategory(
   const topics = repo.topics.map((t) => t.toLowerCase());
   const lang = repo.language?.toLowerCase() ?? "";
   const description = (repo.description ?? "").toLowerCase();
+  const combined = `${name} ${description} ${topics.join(" ")}`;
 
   if (
     topics.includes("react-native") ||
     name.includes("mobile") ||
     name.includes("app") ||
     name.includes("rn-") ||
-    description.includes("react native")
+    lang === "dart" ||
+    lang === "kotlin" ||
+    lang === "swift" ||
+    combined.includes("react native") ||
+    combined.includes("flutter") ||
+    combined.includes("expo")
   ) {
     return "mobile";
   }
 
   if (
-    name.includes("clone") ||
-    name.includes("replica") ||
-    topics.includes("clone") ||
-    description.includes("clone")
+    combined.includes("cli") ||
+    combined.includes("tool") ||
+    combined.includes("utility") ||
+    combined.includes("bot") ||
+    combined.includes("script") ||
+    combined.includes("automation") ||
+    name.includes("util") ||
+    name.includes("tool")
   ) {
-    return "clones";
+    return "utilities";
   }
 
   if (
     topics.includes("mern") ||
+    topics.includes("nextjs") ||
+    topics.includes("react") ||
     topics.includes("mongodb") ||
     name.includes("ecommerce") ||
     name.includes("e-commerce") ||
+    name.includes("web") ||
+    name.includes("dashboard") ||
+    lang === "typescript" ||
     lang === "javascript" ||
     topics.includes("express") ||
     topics.includes("node")
   ) {
-    return "mern";
+    return "web";
   }
 
-  if (lang === "typescript" || topics.includes("nextjs") || topics.includes("react")) {
-    return "mern";
-  }
-
-  return "mobile";
+  return "opensource";
 }
 
 function formatRepoTitle(name: string): string {
@@ -73,21 +85,25 @@ export async function fetchGitHubProjects(): Promise<Project[]> {
 
     return repos
       .filter((repo) => !repo.fork)
-      .map((repo) => ({
-        id: String(repo.id),
-        title: formatRepoTitle(repo.name),
-        description: repo.description ?? "Authentic open-source repository",
-        tags: [
-          ...(repo.language ? [repo.language] : []),
-          ...repo.topics.slice(0, 3),
-        ],
-        category: inferCategory(repo),
-        githubUrl: repo.html_url,
-        liveUrl: repo.homepage || undefined,
-        imageUrl:
-          "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
-        featured: repo.stargazers_count > 0,
-      }));
+      .map((repo) => {
+        const title = formatRepoTitle(repo.name);
+        const category = inferCategory(repo);
+
+        return {
+          id: String(repo.id),
+          title,
+          description: repo.description ?? "Authentic open-source repository",
+          tags: [
+            ...(repo.language ? [repo.language] : []),
+            ...repo.topics.slice(0, 3),
+          ],
+          category,
+          githubUrl: repo.html_url,
+          liveUrl: repo.homepage || undefined,
+          imageUrl: getProjectCoverImage(title, category),
+          featured: repo.stargazers_count > 0,
+        };
+      });
   } catch {
     return [];
   }

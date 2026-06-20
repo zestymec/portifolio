@@ -13,7 +13,7 @@ import { SPRING_ORGANIC } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const INPUT_CLASS =
-  "box-border w-full max-w-full rounded-2xl border-2 border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground placeholder:text-muted/50 transition-colors focus:border-[#FF75A0]/30 focus:outline-none focus:ring-2 focus:ring-[#FF75A0]/30";
+  "box-border w-full max-w-full cursor-text rounded-2xl border-2 border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-foreground placeholder:text-muted/50 transition-colors focus:border-[#FF75A0]/30 focus:outline-none focus:ring-2 focus:ring-[#FF75A0]/30";
 
 interface FormFieldProps {
   label: string;

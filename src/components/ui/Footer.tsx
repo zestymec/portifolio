@@ -86,7 +86,7 @@ export function Footer() {
 
                   href={href}
 
-                  className="text-sm capitalize text-muted transition-colors hover:text-[#C4F042]"
+                  className="cursor-pointer text-sm capitalize text-muted transition-colors hover:text-[#C4F042] hover:opacity-80"
 
                 >
 
@@ -132,7 +132,7 @@ export function Footer() {
 
                   }
 
-                  className="text-sm text-muted transition-colors hover:text-[#FF75A0]"
+                  className="cursor-pointer text-sm text-muted transition-colors hover:text-[#FF75A0] hover:opacity-80"
 
                 >
 

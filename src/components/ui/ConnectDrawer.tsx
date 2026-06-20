@@ -44,7 +44,7 @@ function SocialIcon({ link }: { link: SocialLink }) {
       whileHover={{ scale: 1.05, y: -2 }}
       whileTap={{ scale: 0.95 }}
       transition={SPRING_ORGANIC}
-      className="connect-social-link group"
+      className="connect-social-link group cursor-pointer hover:opacity-90"
       style={{ "--social-color": link.color } as React.CSSProperties}
       onClick={() => {
         confetti({
@@ -58,7 +58,7 @@ function SocialIcon({ link }: { link: SocialLink }) {
       {Icon && (
         <Icon className="h-5 w-5 transition-colors group-hover:text-[var(--social-color)]" />
       )}
-      <div className="flex flex-col min-w-0">
+      <div className="flex min-w-0 flex-col">
         <span className="text-sm font-medium text-foreground tracking-tighter">
           {link.name}
         </span>
@@ -81,9 +81,8 @@ export function ConnectDrawer() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="connect-overlay fixed inset-0 z-50"
+            className="connect-overlay fixed inset-0 z-[100]"
             onClick={closeDrawer}
-            onTouchMove={(e) => e.preventDefault()}
             aria-hidden="true"
           />
           <motion.div
@@ -94,12 +93,13 @@ export function ConnectDrawer() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 30 }}
             transition={SPRING_ORGANIC}
-            className="connect-drawer fixed left-1/2 top-1/2 z-[60] w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl p-6 min-[400px]:p-8"
+            className="connect-drawer fixed left-1/2 top-1/2 z-[101] max-h-[90vh] w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto overscroll-contain rounded-3xl p-6 pb-24 min-[400px]:p-8 min-[400px]:pb-24"
             onClick={(e) => e.stopPropagation()}
           >
             <button
+              type="button"
               onClick={closeDrawer}
-              className="absolute right-4 top-4 rounded-full p-2 text-muted transition-colors hover:bg-white/10 hover:text-foreground"
+              className="absolute right-4 top-4 cursor-pointer rounded-full p-2 text-muted transition-colors hover:bg-white/10 hover:text-foreground hover:opacity-80"
               aria-label="Close connect drawer"
             >
               <X className="h-5 w-5" />
@@ -111,7 +111,7 @@ export function ConnectDrawer() {
                   src={IMAGES.avatar}
                   alt={ALT.avatar}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="64px"
                   loading="lazy"
                 />

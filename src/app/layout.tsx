@@ -53,6 +53,11 @@ export const metadata: Metadata = {
     description: PROFILE.tagline,
     type: "website",
   },
+  icons: {
+    icon: "/favicon.jpeg",
+    shortcut: "/favicon.jpeg",
+    apple: "/favicon.jpeg",
+  },
 };
 
 export default function RootLayout({

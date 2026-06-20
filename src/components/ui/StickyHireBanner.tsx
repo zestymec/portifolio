@@ -60,14 +60,14 @@ export function StickyHireBanner() {
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <Link
             href="/contact"
-            className="flex-1 rounded-full bg-white px-3 py-1.5 text-center text-[11px] font-bold text-[#0B0B1A] sm:flex-none sm:text-xs"
+            className="flex-1 cursor-pointer rounded-full bg-white px-3 py-1.5 text-center text-[11px] font-bold text-[#0B0B1A] transition-opacity hover:opacity-80 sm:flex-none sm:text-xs"
           >
             Hire Umer
           </Link>
           <button
             type="button"
             onClick={handleSaveProfile}
-            className="flex-1 rounded-full border border-white/25 px-3 py-1.5 text-[11px] font-semibold text-foreground sm:flex-none sm:text-xs"
+            className="flex-1 cursor-pointer rounded-full border border-white/25 px-3 py-1.5 text-[11px] font-semibold text-foreground transition-opacity hover:opacity-80 sm:flex-none sm:text-xs"
           >
             Save
           </button>

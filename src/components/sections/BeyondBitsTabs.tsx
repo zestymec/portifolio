@@ -36,7 +36,7 @@ export function BeyondBitsTabs() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                "relative rounded-xl px-3 py-2 text-xs font-medium min-[400px]:px-4 min-[400px]:text-sm",
+                "relative cursor-pointer rounded-xl px-3 py-2 text-xs font-medium transition-colors hover:opacity-80 min-[400px]:px-4 min-[400px]:text-sm",
                 activeTab === tab.id
                   ? "text-white"
                   : "text-muted hover:text-foreground"
@@ -74,7 +74,7 @@ export function BeyondBitsTabs() {
                   >
                     <button
                       onClick={() => setZoomedPhoto(photo.imageUrl)}
-                      className="group relative w-full overflow-hidden rounded-2xl"
+                      className="group relative w-full cursor-pointer overflow-hidden rounded-2xl"
                     >
                       <Image
                         src={photo.imageUrl}
@@ -109,14 +109,14 @@ export function BeyondBitsTabs() {
             >
               {CONTENT_ITEMS.map((item, index) => (
                 <GlassCard key={item.id} delay={index * 0.08}>
-                  <div className="relative mb-4 h-36 overflow-hidden rounded-xl">
+                  <div className="relative mb-4 aspect-video overflow-hidden rounded-xl">
                     <Image
                       src={item.imageUrl}
                       alt={`${item.title} — cinematic content by @zestymec`}
                       fill
                       loading="lazy"
-                      className="object-cover"
-                      sizes="(max-width: 480px) 100vw, 33vw"
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                   <h3 className="text-base font-bold text-foreground tracking-tighter">

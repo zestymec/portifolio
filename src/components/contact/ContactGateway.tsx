@@ -62,7 +62,7 @@ export function ContactGateway() {
                       rel={
                         link.id === "email" ? undefined : "noopener noreferrer"
                       }
-                      className="flex items-center gap-3 rounded-2xl border-2 border-white/5 bg-white/[0.02] p-3 transition-colors hover:border-[#C4F042]/30 hover:bg-[#C4F042]/5 sm:p-4"
+                      className="flex cursor-pointer items-center gap-3 rounded-2xl border-2 border-white/5 bg-white/[0.02] p-3 transition-colors hover:border-[#C4F042]/30 hover:bg-[#C4F042]/5 hover:opacity-90 sm:p-4"
                     >
                       <div
                         className={cn(
@@ -91,7 +91,7 @@ export function ContactGateway() {
                 Direct line:{" "}
                 <a
                   href={`mailto:${PROFILE.email}`}
-                  className="font-semibold text-[#C4F042] hover:underline"
+                  className="font-semibold text-[#C4F042] transition-opacity hover:underline hover:opacity-80"
                 >
                   {PROFILE.email}
                 </a>
@@ -112,7 +112,7 @@ export function ContactGateway() {
                   type="button"
                   onClick={() => setActiveForm(tab.id)}
                   className={cn(
-                    "relative min-w-0 flex-1 rounded-full px-2 py-2.5 text-xs font-bold transition-colors sm:px-3 sm:text-sm",
+                    "relative min-w-0 flex-1 cursor-pointer rounded-full px-2 py-2.5 text-xs font-bold transition-colors hover:opacity-80 sm:px-3 sm:text-sm",
                     activeForm === tab.id
                       ? "text-[#0B0B1A]"
                       : "text-muted hover:text-foreground"

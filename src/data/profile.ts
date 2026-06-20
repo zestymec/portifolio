@@ -85,7 +85,7 @@ export const METRICS: Metric[] = [
   { id: "mobile", label: "Mobile Modules Built", value: "8", suffix: "+", icon: "mobile" },
   { id: "languages", label: "Languages Spoken", value: "4", icon: "globe" },
   { id: "stacks", label: "Tech Stacks", value: "12", suffix: "+", icon: "layers" },
-  { id: "experience", label: "Years Coding", value: "4", suffix: "+", icon: "code" },
+  { id: "experience", label: "Years Coding", value: "1", suffix: "+", icon: "code" },
   { id: "donors", label: "Donors Served", value: "10", suffix: "K+", icon: "users" },
 ];
 

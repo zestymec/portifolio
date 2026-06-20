@@ -35,13 +35,13 @@ export default function ExperiencePage() {
             return (
               <GlassCard key={item.id} delay={index * 0.1}>
                 {image && (
-                  <div className="relative mb-5 h-40 w-full overflow-hidden rounded-2xl sm:h-48">
+                  <div className="relative mb-5 aspect-video w-full overflow-hidden rounded-2xl">
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 768px"
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       loading={index === 0 ? "eager" : "lazy"}
                     />
                   </div>
@@ -63,7 +63,7 @@ export default function ExperiencePage() {
                   {item.href && (
                     <Link
                       href={item.href}
-                      className="inline-flex shrink-0 items-center gap-1 text-sm text-[#FF75A0] transition-colors hover:text-[#C4F042]"
+                      className="inline-flex shrink-0 cursor-pointer items-center gap-1 text-sm text-[#FF75A0] transition-colors hover:text-[#C4F042] hover:opacity-80"
                     >
                       Deep Dive <ArrowRight className="h-4 w-4" />
                     </Link>

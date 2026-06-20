@@ -28,8 +28,12 @@ export function MobileNav({
   return (
     <div className="lg:hidden">
       <button
+        type="button"
         onClick={onToggle}
-        className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-foreground transition-colors hover:bg-white/10"
+        className={cn(
+          "relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-white/10 bg-white/5 text-foreground transition-colors hover:bg-white/10 hover:opacity-80",
+          isOpen ? "z-[1000]" : "z-50"
+        )}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
       >
@@ -60,49 +64,52 @@ export function MobileNav({
 
       <AnimatePresence>
         {isOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
-              onClick={onClose}
-              onTouchMove={(e) => e.preventDefault()}
-            />
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={SPRING_ORGANIC}
-              className="glass-nav fixed right-0 top-0 z-40 flex h-full w-[min(280px,88vw)] flex-col items-stretch p-5 pt-20 sm:w-[min(300px,85vw)] sm:p-6 sm:pt-24"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <nav className="flex flex-col gap-1 text-center">
-                {NAV_LINKS.map((link, index) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ ...SPRING_ORGANIC, delay: index * 0.04 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[999] flex min-h-[100dvh] flex-col bg-[#0B0B1A] backdrop-blur-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-5 pb-4 pt-[max(1.25rem,env(safe-area-inset-top))]">
+              <span className="font-pixel text-[10px] text-[#C4F042]">menu.exe</span>
+              <button
+                type="button"
+                onClick={onClose}
+                className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-white/15 bg-white/10 text-foreground transition-colors hover:bg-white/15 hover:opacity-80"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <nav className="flex flex-1 flex-col justify-center gap-1 overflow-y-auto overscroll-contain px-5 pb-24 text-center">
+              {NAV_LINKS.map((link, index) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ ...SPRING_ORGANIC, delay: index * 0.04 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={onClose}
+                    className={cn(
+                      "block cursor-pointer rounded-xl px-4 py-3.5 text-base font-medium transition-colors hover:opacity-80 sm:text-lg",
+                      pathname === link.href ||
+                        (link.href !== "/" && pathname.startsWith(link.href))
+                        ? "bg-[#C4F042]/15 text-[#C4F042]"
+                        : "text-muted hover:bg-white/5 hover:text-foreground"
+                    )}
                   >
-                    <Link
-                      href={link.href}
-                      onClick={onClose}
-                      className={cn(
-                        "block rounded-xl px-4 py-3 text-sm font-medium transition-colors sm:text-base",
-                        pathname === link.href ||
-                          (link.href !== "/" && pathname.startsWith(link.href))
-                          ? "bg-[#C4F042]/10 text-[#C4F042]"
-                          : "text-muted hover:bg-white/5 hover:text-foreground"
-                      )}
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
-              </nav>
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
 
               <motion.button
+                type="button"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ ...SPRING_ORGANIC, delay: 0.25 }}
@@ -110,12 +117,12 @@ export function MobileNav({
                   onClose();
                   onConnect();
                 }}
-                className="mt-6 w-full rounded-full bg-[#C4F042] px-4 py-3 text-sm font-bold text-[#0B0B1A] shadow-glow"
+                className="mt-8 w-full cursor-pointer rounded-full bg-[#C4F042] px-4 py-3.5 text-sm font-bold text-[#0B0B1A] shadow-glow transition-opacity hover:opacity-90"
               >
                 Connect
               </motion.button>
-            </motion.div>
-          </>
+            </nav>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

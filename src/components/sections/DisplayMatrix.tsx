@@ -21,7 +21,7 @@ export function DisplayMatrix() {
           fill
           priority
           fetchPriority="high"
-          className="object-cover"
+          className="object-cover object-center"
           sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 480px"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B1A]/70 via-transparent to-transparent" />

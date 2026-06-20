@@ -260,8 +260,8 @@ body {
   color: white;
 }
 
-/* Prevent horizontal overflow globally */
-img,
+/* Prevent horizontal overflow — skip Next.js fill images */
+img:not([data-nimg]),
 video,
 svg {
   max-width: 100%;

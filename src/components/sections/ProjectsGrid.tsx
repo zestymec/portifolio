@@ -21,7 +21,7 @@ interface ProjectsGridProps {
 function ProjectSkeleton() {
   return (
     <div className="glass-card overflow-hidden rounded-2xl">
-      <div className="skeleton h-48 w-full" />
+      <div className="skeleton aspect-video w-full" />
       <div className="space-y-3 p-5">
         <div className="skeleton h-5 w-3/4 rounded-lg" />
         <div className="skeleton h-4 w-full rounded-lg" />
@@ -49,7 +49,7 @@ export function ProjectsGrid({ projects, loading = false }: ProjectsGridProps) {
         <SectionHeading
           eyebrow="Source Code Grid"
           title="Projects Showcase"
-          description="Authentic repositories from GitHub — filtered by architecture type with premium skeleton loading."
+          description="Authentic repositories from GitHub — browse by Mobile Apps, Web Platforms, Utilities, and Open Source."
         />
 
         <div className="mb-8 flex flex-wrap gap-2">
@@ -58,7 +58,7 @@ export function ProjectsGrid({ projects, loading = false }: ProjectsGridProps) {
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
               className={cn(
-                "relative rounded-xl px-3 py-2 text-xs font-medium transition-colors min-[400px]:px-4 min-[400px]:text-sm",
+                "relative cursor-pointer rounded-xl px-3 py-2 text-xs font-medium transition-colors hover:opacity-80 min-[400px]:px-4 min-[400px]:text-sm",
                 activeFilter === filter.id
                   ? "text-[#0B0B1A]"
                   : "text-muted hover:text-foreground"
@@ -99,14 +99,14 @@ export function ProjectsGrid({ projects, loading = false }: ProjectsGridProps) {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ ...SPRING_ORGANIC, delay: index * 0.04 }}
                 >
-                  <GlassCard className="flex h-full !flex-col !p-0 overflow-hidden">
-                    <div className="relative h-40 min-[400px]:h-48 overflow-hidden">
+                  <GlassCard className="group flex h-full !flex-col !p-0 overflow-hidden">
+                    <div className="relative aspect-video w-full overflow-hidden">
                       <Image
                         src={project.imageUrl}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 480px) 100vw, 33vw"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
                       {project.featured && (
@@ -143,7 +143,7 @@ export function ProjectsGrid({ projects, loading = false }: ProjectsGridProps) {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs text-muted transition-colors hover:text-accent"
+                            className="inline-flex cursor-pointer items-center gap-1.5 text-xs text-muted transition-colors hover:text-accent hover:opacity-80"
                           >
                             <FaGithub className="h-4 w-4" />
                             Source
@@ -154,7 +154,7 @@ export function ProjectsGrid({ projects, loading = false }: ProjectsGridProps) {
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs text-muted transition-colors hover:text-accent"
+                            className="inline-flex cursor-pointer items-center gap-1.5 text-xs text-muted transition-colors hover:text-accent hover:opacity-80"
                           >
                             <ExternalLink className="h-4 w-4" />
                             Live

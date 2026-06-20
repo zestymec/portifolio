@@ -31,13 +31,13 @@ export default function MerEcommercePage() {
           description="Mapping the current production-grade MERN Stack e-commerce project — highly optimized from scratch with full payment, inventory, and admin systems."
         />
 
-        <div className="relative mb-8 h-44 w-full overflow-hidden rounded-2xl sm:h-56">
+        <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-2xl">
           <Image
             src={IMAGES.experience.mern}
             alt={ALT.mern}
             fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 768px"
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 50vw"
             loading="lazy"
           />
         </div>

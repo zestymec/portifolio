@@ -1,4 +1,9 @@
-export type ProjectCategory = "all" | "mobile" | "mern" | "clones";
+export type ProjectCategory =
+  | "all"
+  | "mobile"
+  | "web"
+  | "utilities"
+  | "opensource";
 
 export type SkillCategory = "frontend" | "backend" | "devops";
 

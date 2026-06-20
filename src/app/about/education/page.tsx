@@ -31,13 +31,13 @@ export default function EducationPage() {
           description="Interactive cards detailing matriculation achievements and current FSc Pre-Engineering pursuit at GCS Lahore."
         />
 
-        <div className="relative mb-8 h-44 w-full overflow-hidden rounded-2xl sm:h-56 md:mb-12">
+        <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-2xl md:mb-12">
           <Image
             src={IMAGES.education}
             alt={ALT.education}
             fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 768px"
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 50vw"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B1A]/80 to-transparent" />
