@@ -1,8 +1,18 @@
-export type ProjectCategory = "all" | "mobile" | "web" | "opensource";
+export type ProjectCategory = "all" | "mobile" | "mern" | "clones";
 
 export type SkillCategory = "frontend" | "backend" | "devops";
 
-export type ExperienceType = "work" | "brand";
+export type ExperienceType = "work" | "brand" | "project";
+
+import type { StaticImageData } from "next/image";
+
+export type PortfolioImage = StaticImageData | string;
+
+export type BeyondBitsTab =
+  | "photography"
+  | "content"
+  | "gaming"
+  | "languages";
 
 export interface SocialLink {
   id: string;
@@ -36,6 +46,7 @@ export interface ExperienceItem {
   description: string;
   highlights: ExperienceHighlight[];
   type: ExperienceType;
+  href?: string;
 }
 
 export interface Skill {
@@ -53,7 +64,7 @@ export interface Project {
   category: Exclude<ProjectCategory, "all">;
   liveUrl?: string;
   githubUrl?: string;
-  imageUrl: string;
+  imageUrl: PortfolioImage;
   featured?: boolean;
 }
 
@@ -64,12 +75,13 @@ export interface LanguageMilestone {
   streak?: number;
   proficiency?: number;
   platform?: string;
+  native?: boolean;
 }
 
 export interface PhotoItem {
   id: string;
   title: string;
-  imageUrl: string;
+  imageUrl: PortfolioImage;
   caption: string;
 }
 
@@ -81,18 +93,64 @@ export interface CreativeVector {
   icon: "video" | "camera" | "languages";
 }
 
-export interface ContactFormData {
+export interface ContentItem {
+  id: string;
+  title: string;
+  description: string;
+  metric?: string;
+  platform: string;
+  imageUrl: PortfolioImage;
+}
+
+export interface GamingLog {
+  id: string;
+  game: string;
+  focus: string;
+  description: string;
+  icon: "coc" | "pubg" | "cod" | "cricket";
+}
+
+export interface EducationRecord {
+  id: string;
+  institution: string;
+  program: string;
+  period: string;
+  score?: string;
+  location: string;
+  highlights: string[];
+}
+
+export interface LearningTrack {
+  id: string;
+  title: string;
+  platform: string;
+  status: "active" | "completed" | "planned";
+  period: string;
+  topics: string[];
+  progress: number;
+}
+
+export interface MerArchitectureLayer {
+  id: string;
+  layer: string;
+  stack: string[];
+  description: string;
+}
+
+export interface CollaborationFormFields {
   name: string;
   email: string;
   subject: string;
   message: string;
 }
 
-export interface ContactFormErrors {
-  name?: string;
-  email?: string;
-  subject?: string;
-  message?: string;
+export interface BlueprintFormFields {
+  clientName: string;
+  email: string;
+  brandName: string;
+  budget: string;
+  projectScope: string;
+  technicalRequirements: string;
 }
 
 export interface NavLink {

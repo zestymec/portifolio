@@ -1,6 +1,7 @@
 import type { GitHubRepo, Project, ProjectCategory } from "@/types";
 
-const GITHUB_USERNAME = "zestymec";
+const GITHUB_API_URL =
+  "https://api.github.com/users/zestymec/repos?per_page=100&sort=updated";
 
 function inferCategory(
   repo: GitHubRepo
@@ -8,42 +9,61 @@ function inferCategory(
   const name = repo.name.toLowerCase();
   const topics = repo.topics.map((t) => t.toLowerCase());
   const lang = repo.language?.toLowerCase() ?? "";
+  const description = (repo.description ?? "").toLowerCase();
 
   if (
     topics.includes("react-native") ||
     name.includes("mobile") ||
-    name.includes("app")
+    name.includes("app") ||
+    name.includes("rn-") ||
+    description.includes("react native")
   ) {
     return "mobile";
   }
 
-  if (topics.includes("open-source") || repo.stargazers_count > 5) {
-    return "opensource";
+  if (
+    name.includes("clone") ||
+    name.includes("replica") ||
+    topics.includes("clone") ||
+    description.includes("clone")
+  ) {
+    return "clones";
   }
 
   if (
-    lang === "typescript" ||
+    topics.includes("mern") ||
+    topics.includes("mongodb") ||
+    name.includes("ecommerce") ||
+    name.includes("e-commerce") ||
     lang === "javascript" ||
-    topics.includes("nextjs") ||
-    topics.includes("react")
+    topics.includes("express") ||
+    topics.includes("node")
   ) {
-    return "web";
+    return "mern";
   }
 
-  return "opensource";
+  if (lang === "typescript" || topics.includes("nextjs") || topics.includes("react")) {
+    return "mern";
+  }
+
+  return "mobile";
+}
+
+function formatRepoTitle(name: string): string {
+  return name
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 export async function fetchGitHubProjects(): Promise<Project[]> {
   try {
-    const response = await fetch(
-      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=12`,
-      {
-        next: { revalidate: 3600 },
-        headers: {
-          Accept: "application/vnd.github+json",
-        },
-      }
-    );
+    const response = await fetch(GITHUB_API_URL, {
+      next: { revalidate: 3600 },
+      headers: {
+        Accept: "application/vnd.github+json",
+      },
+    });
 
     if (!response.ok) {
       return [];
@@ -55,20 +75,18 @@ export async function fetchGitHubProjects(): Promise<Project[]> {
       .filter((repo) => !repo.fork)
       .map((repo) => ({
         id: String(repo.id),
-        title: repo.name
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" "),
-        description: repo.description ?? "Open source project on GitHub",
+        title: formatRepoTitle(repo.name),
+        description: repo.description ?? "Authentic open-source repository",
         tags: [
           ...(repo.language ? [repo.language] : []),
           ...repo.topics.slice(0, 3),
         ],
         category: inferCategory(repo),
         githubUrl: repo.html_url,
-        liveUrl: repo.homepage ?? undefined,
+        liveUrl: repo.homepage || undefined,
         imageUrl:
-          "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80", // TODO: Umer - Replace with actual asset link
+          "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+        featured: repo.stargazers_count > 0,
       }));
   } catch {
     return [];

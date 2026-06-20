@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { SPRING_ORGANIC } from "@/lib/motion";
 
 interface PageTransitionProps {
   children: ReactNode;
@@ -20,7 +21,7 @@ export function PageTransition({ children }: PageTransitionProps) {
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={SPRING_ORGANIC}
     >
       {children}
     </motion.div>

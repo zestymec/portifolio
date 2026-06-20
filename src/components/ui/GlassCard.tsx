@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { SPRING_ORGANIC } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 interface GlassCardProps {
@@ -22,7 +23,7 @@ export function GlassCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay }}
+      transition={{ ...SPRING_ORGANIC, delay }}
       whileHover={hover ? { y: -4, scale: 1.01 } : undefined}
       className={cn(
         "glass-card rounded-2xl p-6 transition-shadow duration-300",
