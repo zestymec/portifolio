@@ -16,13 +16,13 @@ export const EDUCATION_DATA: EducationRecord[] = [
   },
   {
     id: "matric",
-    institution: "Matriculation — Computer Science",
-    program: "Computer Science Stream",
+    institution: "Matriculation — Bio Science",
+    program: "Bio Science Stream",
     period: "Completed",
     score: "88%",
     location: "Lahore, Pakistan",
     highlights: [
-      "88% aggregate score in Computer Science matriculation",
+      "88% aggregate score in Bio Science matriculation",
       "Early exposure to programming logic & computational thinking",
       "Foundation that accelerated self-taught software engineering path",
       "Sparked passion for mobile & web development careers",

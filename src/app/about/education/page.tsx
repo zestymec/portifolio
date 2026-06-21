@@ -10,7 +10,7 @@ import { ALT, IMAGES } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Education",
   description:
-    "Academic records — Matriculation 88% CS and FSc Pre-Engineering at Government College of Science, Lahore.",
+    "Academic records — Matriculation 88% Bio and FSc Pre-Engineering at Government College of Science, Lahore.",
 };
 
 export default function EducationPage() {
