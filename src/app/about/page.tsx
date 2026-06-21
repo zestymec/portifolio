@@ -32,7 +32,7 @@ const SUB_PAGES = [
 
     title: "Academic Ledger",
 
-    desc: "Matriculation (88% CS) & FSc Pre-Engineering at GCS Lahore",
+    desc: "Matriculation (88% Bio-Science) & FSc Pre-Engineering at GCS Lahore",
 
     icon: GraduationCap,
 
