@@ -15,3 +15,12 @@ fourth rock paper scissor game link https://rock-paper-scissors-javascript-game-
 8th to do app repo https://github.com/zestymec/to-do-list-app link https://zestymec.github.io/to-do-list-app/
 
 9th react router repo https://github.com/zestymec/react-router-web link https://react-router-web-beta.vercel.app/
+
+
+idea : a complex project of todo project where are communities and every one can create acc and a boss and his under employee chating are global chating area and boss task asigning employe done and further boss approved and it feed back daily tasks list time taken and privacy like very complex project !!
+
+idea : a place where some people can share there idea with developers !
+
+
+idea : a global pakistani brand like amazon and like food panda better then them and customer serving more reliable and ideas from blinkit ...
+instant delivery !
