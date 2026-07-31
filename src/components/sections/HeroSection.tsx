@@ -85,7 +85,7 @@ export function HeroSection() {
             >
               Hey — I&apos;m{" "}
               <strong className="text-foreground">{PROFILE.name}</strong> (
-              {PROFILE.signature}). A {PROFILE.age}-year-old {PROFILE.title}{" "}
+              {PROFILE.signature}). A 18-year-old {PROFILE.title}{" "}
               shipping React Native & Next.js at Alkhidmat Foundation, growing
               Bazaura.pk, and turning raw ideas into real products.
             </motion.p>
