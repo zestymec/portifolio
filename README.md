@@ -1,4 +1,4 @@
-first Password generator project hosting link : https://password-generator-react-by-zestymec.netlify.app/ repo : https://github.com/zestymec/Password-generator-React
+<!-- first Password generator project hosting link : https://password-generator-react-by-zestymec.netlify.app/ repo : https://github.com/zestymec/Password-generator-React
 
 Second auto deals web clone link https://autodeals-pk-app-clone-by-zestymec.netlify.app/ repo https://github.com/zestymec/autodeals-pk-clone-full-pure-css-bootstrap
 
@@ -23,4 +23,4 @@ idea : a place where some people can share there idea with developers !
 
 
 idea : a global pakistani brand like amazon and like food panda better then them and customer serving more reliable and ideas from blinkit ...
-instant delivery !
+instant delivery ! -->

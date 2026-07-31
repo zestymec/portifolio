@@ -3,27 +3,26 @@ import type { Metric, NavLink, SocialLink } from "@/types";
 export const PROFILE = {
   name: "Muhammad Umer Aziz",
   username: "zestymec",
-  title: "Frontend Engineer & Gen-Z Tech Architect",
+  title: "Full-Stack Developer & MLOps Practitioner",
   tagline:
-    "16-year-old builder shipping user-centered products with indie-hacker energy",
+    "Building scalable web applications, production pipelines, and high-performance digital systems with modern engineering practices",
   email: "m.umer394aziz@gmail.com",
   location: "Lahore, Pakistan",
-  age: 16,
   signature: "@zestymec",
 } as const;
 
 export const LIVE_STATUS =
-  "⚡ Currently: Web & Mobile Dev Intern at Alkhidmat Foundation — React Native CLI, Next.js campaign UI, and organic growth at Bazaura.pk." as const;
+  "⚡ Currently: Scaling MLOps pipelines, building full-stack systems, and bridging production software with modern cloud architectures." as const;
 
 export const TYPEWRITER_PHRASES = [
   "Muhammad Umer Aziz",
-  "Associate Software Engineer @ Alkhidmat",
-  "React Native CLI Architect",
-  "Brand Manager @ Bazaura",
-  "MERN Stack Builder",
-  "Content Creator @zestymec",
-  "Next.js Caching Explorer",
-  "16-Year-Old Engineering Prodigy",
+  "Full-Stack Software Engineer",
+  "MLOps & Infrastructure Builder",
+  "React Native & Next.js Architect",
+  "Ex-Alkhidmat Dev Intern",
+  "Startup Operator @ Bazaura",
+  "Systems & Automation Enthusiast",
+  "Code & Japanese Language Learner",
 ] as const;
 
 export const NAV_LINKS: NavLink[] = [
@@ -81,33 +80,33 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ];
 
 export const METRICS: Metric[] = [
-  { id: "views", label: "Breakout Video Views", value: "120", suffix: "K+", icon: "zap" },
-  { id: "mobile", label: "Mobile Modules Built", value: "8", suffix: "+", icon: "mobile" },
-  { id: "languages", label: "Languages Spoken", value: "4", icon: "globe" },
-  { id: "stacks", label: "Tech Stacks", value: "12", suffix: "+", icon: "layers" },
-  { id: "experience", label: "Years Coding", value: "1", suffix: "+", icon: "code" },
-  { id: "donors", label: "Donors Served", value: "10", suffix: "K+", icon: "users" },
+  { id: "views", label: "Breakout Video Views", value: "136", suffix: "K+", icon: "zap" },
+  { id: "mobile", label: "Mobile Modules Built", value: "12", suffix: "+", icon: "mobile" },
+  { id: "languages", label: "Languages Explored", value: "3", icon: "globe" },
+  { id: "stacks", label: "Core Tech Stacks", value: "3", suffix: "+", icon: "layers" },
+  { id: "experience", label: "Years Engineering", value: "1", suffix: "+", icon: "code" },
+  { id: "donors", label: "Users & Donors Impacted", value: "10", suffix: "K+", icon: "users" },
 ];
 
 export const HUB_CARDS = [
   {
     href: "/about",
     title: "About Me",
-    desc: "Languages, academics, gaming & the full human story",
+    desc: "Tech philosophy, background, languages & engineering mindset",
   },
   {
     href: "/experience",
     title: "Experience",
-    desc: "Alkhidmat Foundation, Bazaura.pk & MERN e-commerce",
+    desc: "Alkhidmat Foundation, Bazaura.pk operations & full-stack development",
   },
   {
     href: "/projects",
     title: "Projects",
-    desc: "Live GitHub repos — filter, explore, clone",
+    desc: "Production repos, MLOps pipelines, and web systems",
   },
   {
     href: "/beyond-bits",
     title: "Beyond Bits",
-    desc: "Photography, content creation, gaming & languages",
+    desc: "Japanese language learning, gaming optimization & content creation",
   },
 ] as const;

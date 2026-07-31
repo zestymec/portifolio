@@ -67,7 +67,7 @@ export default function AboutPage() {
 
           title="Polyglot & builder"
 
-          description={`I'm ${PROFILE.name} (${PROFILE.signature}) — a ${PROFILE.age}-year-old ${PROFILE.title} juggling FSc Pre-Engineering at GCS Lahore with real-world engineering at Alkhidmat Foundation Pakistan.`}
+          description={`I'm ${PROFILE.name} (${PROFILE.signature}) — a 18-year-old ${PROFILE.title} juggling FSc Pre-Engineering at GCS Lahore with real-world engineering at Alkhidmat Foundation Pakistan.`}
 
         />
 
