@@ -8,14 +8,19 @@ import { EDUCATION_DATA } from "@/data/education";
 import { ALT, IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Education",
+  title: "Academic Ledger | Muhammad Umer Aziz",
   description:
-    "Academic records — Matriculation 88% Bio and FSc Pre-Engineering at Government College of Science, Lahore.",
+    "Academic records — BS Computer Science at Virtual University of Pakistan, FSc Pre-Engineering at GCS Lahore, and Matriculation (88%).",
+  openGraph: {
+    title: "Academic Ledger | Muhammad Umer Aziz",
+    description:
+      "Academic records — BS Computer Science at Virtual University of Pakistan, FSc Pre-Engineering at GCS Lahore, and Matriculation (88%).",
+  },
 };
 
 export default function EducationPage() {
   return (
-    <section className="relative overflow-x-hidden px-4 py-20 sm:py-24 md:px-6 md:py-32">
+    <section className="relative overflow-x-hidden px-4 pt-28 pb-20 sm:pt-32 sm:pb-24 md:px-6 md:pt-36 md:pb-32">
       <div className="mx-auto w-full max-w-6xl min-w-0">
         <Link
           href="/about"
@@ -28,7 +33,7 @@ export default function EducationPage() {
         <SectionHeading
           eyebrow="Academic Ledger"
           title="Education Records"
-          description="Interactive cards detailing matriculation achievements and current FSc Pre-Engineering pursuit at GCS Lahore."
+          description="Formal education credentials spanning enrolled BS Computer Science at Virtual University of Pakistan, completed FSc Pre-Engineering at GCS Lahore, and Matriculation in Science (88%)."
         />
 
         <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-2xl md:mb-12">

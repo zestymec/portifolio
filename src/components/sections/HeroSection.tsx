@@ -85,9 +85,7 @@ export function HeroSection() {
             >
               Hey — I&apos;m{" "}
               <strong className="text-foreground">{PROFILE.name}</strong> (
-              {PROFILE.signature}). A {PROFILE.title}{" "}
-              shipping React Native & Next.js at Alkhidmat Foundation, growing
-              Bazaura.pk, and turning raw ideas into real products.
+              {PROFILE.signature}). {PROFILE.title} — Frontend Developer (Contract) at Alkhidmat Foundation Pakistan, architecting the Bazaura.pk full-stack platform, and building high-performance web and mobile products.
             </motion.p>
 
             <motion.div
@@ -96,12 +94,16 @@ export function HeroSection() {
               transition={{ ...SPRING_ORGANIC, delay: 0.5 }}
               className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8"
             >
-              <MagneticButton variant="primary" onClick={openDrawer}>
-                Connect
+              <MagneticButton variant="primary" href="/projects">
+                View Projects
                 <ArrowRight className="h-4 w-4" />
               </MagneticButton>
-              <MagneticButton variant="ghost" href="/projects">
-                View Projects
+              <MagneticButton
+                variant="ghost"
+                href="/Muhammad_Umer_Aziz_CV.pdf"
+                download="Muhammad_Umer_Aziz_CV.pdf"
+              >
+                Request CV (PDF)
               </MagneticButton>
             </motion.div>
           </motion.div>

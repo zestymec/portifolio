@@ -63,14 +63,43 @@ export interface Skill {
 
 export interface Project {
   id: string;
+  slug?: string;
   title: string;
   description: string;
   tags: string[];
   category: Exclude<ProjectCategory, "all">;
   liveUrl?: string;
   githubUrl?: string;
+  repos?: { label: string; url: string; role?: string }[];
   imageUrl: PortfolioImage;
   featured?: boolean;
+  status?: "Live" | "In Development" | "Concept";
+}
+
+export interface FlagshipProject {
+  slug: string;
+  title: string;
+  subtitle: string;
+  summary: string;
+  category: Exclude<ProjectCategory, "all">;
+  role: string;
+  period: string;
+  status: "Shipped & Live" | "In Development" | "Shipped / Active";
+  stack: string[];
+  repos?: { label: string; url: string; role?: string }[];
+  githubUrl?: string;
+  liveUrl?: string;
+  context: string;
+  problem: string;
+  solution: string;
+  keyFeatures: { title: string; description: string }[];
+  shippedVsInProgress: {
+    shipped: string[];
+    inProgress: string[];
+  };
+  metrics?: { label: string; value: string }[];
+  architecture?: string[];
+  imageAlt?: string;
 }
 
 export interface LanguageMilestone {

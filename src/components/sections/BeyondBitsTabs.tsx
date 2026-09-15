@@ -22,7 +22,7 @@ export function BeyondBitsTabs() {
   const [zoomedPhoto, setZoomedPhoto] = useState<PortfolioImage | null>(null);
 
   return (
-    <section className="relative overflow-x-hidden px-4 py-20 md:px-6 md:py-24">
+    <section className="relative overflow-x-hidden px-4 pt-28 pb-20 sm:pt-32 sm:pb-24 md:px-6 md:pt-36 md:pb-32">
       <div className="mx-auto w-full max-w-6xl min-w-0">
         <SectionHeading
           eyebrow="Lifestyle Ecosystem"

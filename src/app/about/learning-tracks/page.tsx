@@ -7,20 +7,25 @@ import { LEARNING_TRACKS } from "@/data/learning";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Learning Tracks",
+  title: "Continuous Learning | Muhammad Umer Aziz",
   description:
-    "Ongoing self-education timelines — Chai aur Code React Native, Apna College JavaScript, and Next.js advanced architecture.",
+    "Ongoing technical specializations — Python Pro Bootcamp (Day 21/100), Andrew Ng Machine Learning Specialization, MLOps, and production full-stack systems.",
+  openGraph: {
+    title: "Continuous Learning | Muhammad Umer Aziz",
+    description:
+      "Ongoing technical specializations — Python Pro Bootcamp (Day 21/100), Andrew Ng Machine Learning Specialization, MLOps, and production full-stack systems.",
+  },
 };
 
 const STATUS_STYLES = {
-  active: "bg-emerald-500/10 text-emerald-400",
-  completed: "bg-[#C4F042]/10 text-[#C4F042]",
-  planned: "bg-white/5 text-muted",
+  active: "bg-[#C4F042]/15 text-[#C4F042] border border-[#C4F042]/30",
+  completed: "bg-[#6366F1]/15 text-[#6366F1] border border-[#6366F1]/30",
+  planned: "bg-white/5 text-muted border border-white/10",
 } as const;
 
 export default function LearningTracksPage() {
   return (
-    <section className="relative overflow-x-hidden px-4 py-20 sm:py-24 md:px-6 md:py-32">
+    <section className="relative overflow-x-hidden px-4 pt-28 pb-20 sm:pt-32 sm:pb-24 md:px-6 md:pt-36 md:pb-32">
       <div className="mx-auto w-full max-w-6xl min-w-0">
         <Link
           href="/about"
@@ -31,9 +36,9 @@ export default function LearningTracksPage() {
         </Link>
 
         <SectionHeading
-          eyebrow="Self-Education"
-          title="Learning Tracks"
-          description="Active timelines across premier community tracks — Chai aur Code, Apna College, and Sigma Web Development."
+          eyebrow="Technical Growth"
+          title="Continuous Learning"
+          description="Active coursework and applied engineering disciplines spanning Python backend development, machine learning algorithms, and modern full-stack architectures."
         />
 
         <div className="mt-12 flex flex-col gap-4 md:gap-6">

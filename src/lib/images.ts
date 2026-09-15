@@ -34,9 +34,9 @@ export const ALT = {
   education:
     "Muhammad Umer Aziz on college last day at GCS Lahore — academic milestone",
   alkhidmat:
-    "Muhammad Umer Aziz coding at his workspace — Alkhidmat Foundation intern building React Native & Next.js",
+    "Muhammad Umer Aziz coding at his workspace — Alkhidmat Foundation Frontend Developer building React Native & Next.js",
   bazaura:
-    "Muhammad Umer Aziz creative brand portrait — Bazaura.pk founder & tech lead",
+    "Muhammad Umer Aziz creative brand portrait — Freelance Full-Stack Developer for Bazaura.pk",
   mern: "Muhammad Umer Aziz architecting MERN stack projects at his development setup",
 } as const;
 

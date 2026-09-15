@@ -68,6 +68,8 @@ function formatRepoTitle(name: string): string {
     .join(" ");
 }
 
+import { CURATED_PROJECTS } from "@/data/projectsData";
+
 export async function fetchGitHubProjects(): Promise<Project[]> {
   try {
     const response = await fetch(GITHUB_API_URL, {
@@ -78,13 +80,23 @@ export async function fetchGitHubProjects(): Promise<Project[]> {
     });
 
     if (!response.ok) {
-      return [];
+      return CURATED_PROJECTS;
     }
 
     const repos: GitHubRepo[] = await response.json();
+    if (!Array.isArray(repos)) {
+      return CURATED_PROJECTS;
+    }
 
-    return repos
-      .filter((repo) => !repo.fork)
+    const knownUrls = new Set(
+      CURATED_PROJECTS.flatMap((p) => [
+        p.githubUrl?.toLowerCase(),
+        ...(p.repos?.map((r) => r.url.toLowerCase()) ?? []),
+      ]).filter(Boolean)
+    );
+
+    const extraProjects: Project[] = repos
+      .filter((repo) => !repo.fork && !knownUrls.has(repo.html_url.toLowerCase()))
       .map((repo) => {
         const title = formatRepoTitle(repo.name);
         const category = inferCategory(repo);
@@ -104,7 +116,9 @@ export async function fetchGitHubProjects(): Promise<Project[]> {
           featured: repo.stargazers_count > 0,
         };
       });
+
+    return [...CURATED_PROJECTS, ...extraProjects];
   } catch {
-    return [];
+    return CURATED_PROJECTS;
   }
 }

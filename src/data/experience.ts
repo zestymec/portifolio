@@ -2,104 +2,104 @@ import type { ExperienceItem, MerArchitectureLayer } from "@/types";
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
-    id: "alkhidmat",
+    id: "alkhidmat-contract",
     company: "Alkhidmat Foundation Pakistan",
-    role: "Web & Mobile Development Intern",
-    period: "2024 — Present",
-    location: "Lahore HQ — Media & Marketing Web Dept.",
+    role: "Frontend Developer (Contract)",
+    period: "September 2026 — Present",
+    location: "Lahore HQ — Media & Marketing Department",
     description:
-      "Designing UI layers, building cross-platform mobile modules via React Native CLI, resolving parent class style overlaps, and optimizing donation/campaign tracking elements for a national philanthropy platform.",
+      "Converted from internship to a paid contract role after shipping production features. Engineering the Next.js Fundraiser Platform, developing cross-platform React Native mobile applications, refactoring legacy codebases, and supporting the main alkhidmat.org web architecture.",
     type: "work",
     href: "/experience/alkhidmat",
     highlights: [
       {
-        id: "ui-layers",
-        title: "UI Layer Architecture",
+        id: "fundraiser-platform",
+        title: "Fundraiser Platform (Shipped)",
         description:
-          "Designing and implementing glassmorphic, accessible UI layers for the Alkhidmat donor experience with multi-lingual support.",
-        tags: ["React Native CLI", "TypeScript", "UI/UX", "i18n"],
+          "Engineered and shipped the live fundraiser platform using Next.js and Tailwind CSS, building 15+ production components (auth, campaigns, profiles) and an AI-powered writing assistant for campaign descriptions.",
+        tags: ["Next.js", "Tailwind CSS", "TypeScript", "AI Writing Assist"],
       },
       {
-        id: "mobile-modules",
-        title: "Cross-Platform Mobile Modules",
+        id: "mobile-engineering",
+        title: "React Native Mobile & WebView",
         description:
-          "Building production mobile modules with Hermes optimization, custom navigation, and parent class style conflict resolution.",
-        tags: ["React Native", "Hermes", "JS/TS", "Native Modules"],
+          "Building the organization's cross-platform mobile app in React Native (iOS & Android) with Hermes engine optimization, plus maintaining the dedicated WebView wrapper app.",
+        tags: ["React Native", "Hermes", "WebView", "Mobile Arch"],
       },
       {
-        id: "donation-tracking",
-        title: "Donation & Campaign Tracking",
+        id: "web-refactoring",
+        title: "alkhidmat.org Architecture & Refactoring",
         description:
-          "Optimizing donation flows, Zakat calculation elements, and campaign tracking dashboards for global donor engagement.",
-        tags: ["Campaign Analytics", "Zakat Engine", "Performance"],
+          "Supporting the organization's main Next.js web application and upcoming React redesign. Refactoring legacy, undocumented code under senior supervision using modern Git workflows.",
+        tags: ["Next.js", "React", "Code Refactoring", "Git/GitHub"],
       },
     ],
   },
   {
-    id: "bazaura",
-    company: "Bazaura",
-    role: "Brand Manager & Venture Lead",
-    period: "2023 — Present",
-    location: "bazaura.pk — Remote",
+    id: "alkhidmat-intern",
+    company: "Alkhidmat Foundation Pakistan",
+    role: "Web Development Intern",
+    period: "January 9, 2026 — September 8, 2026 (~8 months)",
+    location: "Lahore HQ — Media & Marketing Web Dept",
     description:
-      "Leading full-funnel digital operations — domain routing, WooCommerce optimization, Meta/TikTok Ads Manager pipelines, and conversion-focused landing page architecture.",
+      "Completed an 8-month intensive engineering internship. Designed donor UI systems, bridged mobile navigation patterns, and delivered donation tracking flows, earning a direct promotion to a paid contract role.",
+    type: "work",
+    href: "/experience/alkhidmat",
+    highlights: [
+      {
+        id: "intern-ui",
+        title: "Donor UI System Design",
+        description:
+          "Designed accessible, high-performance UI components and multi-lingual layout foundations for donor campaigns.",
+        tags: ["React", "UI/UX", "Tailwind CSS", "Accessibility"],
+      },
+      {
+        id: "intern-mobile",
+        title: "Cross-Platform Navigation",
+        description:
+          "Implemented stack and tab navigation architectures, resolving style conflicts across Android and iOS runtime environments.",
+        tags: ["React Native", "Navigation", "Hermes"],
+      },
+      {
+        id: "intern-promotion",
+        title: "Contract Promotion Milestone",
+        description:
+          "Earned promotion from intern to paid Frontend Developer (Contract) based on demonstrable velocity and reliable production shipping.",
+        tags: ["Career Milestone", "Production Shipping", "Promotion"],
+      },
+    ],
+  },
+  {
+    id: "freelance-bazaura",
+    company: "Freelance Full-Stack & Client Operations",
+    role: "Freelance Full-Stack Developer",
+    period: "Ongoing / Self-Employed",
+    location: "Remote — Concurrent with Alkhidmat & BSCS",
+    description:
+      "Engineering full-stack web and mobile platforms alongside digital operations for multiple clients: Bazaura.pk, WerInvestments, Bella, NoorVerse Academy, and Hijazi Collections. Spearheading the 3-repo Bazaura.pk platform rebuild and courier logistics.",
     type: "brand",
     href: "/experience/bazaura",
     highlights: [
       {
-        id: "domain-routing",
-        title: "Domain & Infrastructure",
+        id: "bazaura-3repos",
+        title: "Bazaura.pk 3-Repo Rebuild",
         description:
-          "Managing domain routing, DNS configuration, SSL pipelines, and storefront uptime for bazaura.pk.",
-        tags: ["DNS", "WooCommerce", "SSL", "CDN"],
+          "Architecting a full-stack e-commerce ecosystem: Next.js web frontend, React Native mobile app (iOS/Android), and shared Python + SQL backend.",
+        tags: ["Next.js", "React Native", "Python", "SQL"],
       },
       {
-        id: "ads-pipeline",
-        title: "Meta & TikTok Ads Manager",
+        id: "wordpress-acf",
+        title: "WordPress (PHP/ACF) Customization",
         description:
-          "Orchestrating paid acquisition funnels across Meta and TikTok with creative asset pipelines and ROAS tracking.",
-        tags: ["Meta Ads", "TikTok Ads", "Analytics", "ROAS"],
+          "Customizing WordPress themes and Advanced Custom Fields (ACF) since 2024 for freelance client storefronts and content portals.",
+        tags: ["WordPress", "PHP/ACF", "Theming", "CMS"],
       },
       {
-        id: "landing-metrics",
-        title: "Landing Page Optimization",
+        id: "operations-logistics",
+        title: "E-Commerce Operations & Logistics",
         description:
-          "Building and A/B testing high-converting product landing pages with SEO-optimized content and visual assets.",
-        tags: ["SEO", "Conversion", "A/B Testing", "Landing Pages"],
-      },
-    ],
-  },
-  {
-    id: "mern-ecommerce",
-    company: "MERN E-Commerce Platform",
-    role: "Architect & Lead Developer",
-    period: "2025 — Present",
-    location: "Personal Project — Production Build",
-    description:
-      "Architecting a production-ready, highly optimized MERN Stack e-commerce platform from scratch with full payment, inventory, and admin systems.",
-    type: "project",
-    href: "/experience/mern-ecommerce",
-    highlights: [
-      {
-        id: "backend-api",
-        title: "Express.js API Layer",
-        description:
-          "RESTful API with JWT authentication, rate limiting, MongoDB aggregation pipelines, and comprehensive error handling.",
-        tags: ["Express.js", "MongoDB", "JWT", "REST"],
-      },
-      {
-        id: "frontend-store",
-        title: "React Storefront",
-        description:
-          "Dynamic product catalog, cart persistence, checkout flows, and admin dashboard with real-time inventory updates.",
-        tags: ["React", "Redux", "Stripe", "Admin Panel"],
-      },
-      {
-        id: "deployment",
-        title: "Production Deployment",
-        description:
-          "CI/CD pipelines, environment configuration, database indexing, and performance monitoring for production scale.",
-        tags: ["Docker", "CI/CD", "Indexing", "Monitoring"],
+          "Managing end-to-end e-commerce logistics: order fulfillment, PostEx courier API coordination, Meta Ads management, and Canva design assets.",
+        tags: ["PostEx Logistics", "Meta Ads", "E-Commerce", "SMM"],
       },
     ],
   },
@@ -107,51 +107,55 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
 
 export const ALKHIDMAT_DETAILS = {
   title: "Alkhidmat Foundation Pakistan",
-  subtitle: "Media & Marketing Web Department — Lahore HQ",
+  subtitle: "Media & Marketing Department — Lahore Head Office",
+  roleStatus: "Frontend Developer (Contract) · Sept 2026 – Present (Prior: Intern Jan – Sept 2026)",
   contributions: [
     {
-      area: "UI Layer Design",
+      area: "Next.js Fundraiser Platform (Shipped & Live)",
       tasks: [
-        "Glassmorphic component systems for donor-facing screens",
-        "Multi-lingual layout adaptation (Urdu, English, Arabic)",
-        "Accessibility audits & WCAG compliance improvements",
+        "Shipped and live production philanthropy platform built with Next.js and Tailwind CSS",
+        "Developed 15+ components covering auth flows, campaign pages, and fundraiser profiles",
+        "Integrated AI-powered writing-assist feature for campaign descriptions",
+        "Streamlined donation flows, campaign metrics, and Zakat calculation interfaces",
       ],
     },
     {
-      area: "React Native CLI Modules",
+      area: "Mobile App & WebView Development",
       tasks: [
-        "Cross-platform navigation with stack & tab architectures",
-        "Parent class style overlap debugging & resolution",
-        "Hermes engine profiling & bundle size optimization",
+        "Building the organization's cross-platform mobile app in React Native (iOS & Android)",
+        "Hermes engine profiling and bundle size optimization",
+        "Developed and maintained separate WebView wrapper app (Alkhidmat-Foundation-Web-View-App)",
+        "Integrated robust navigation architectures and cross-platform styling",
       ],
     },
     {
-      area: "Campaign & Donation Systems",
+      area: "alkhidmat.org Architecture & Refactoring",
       tasks: [
-        "Real-time donation tracking dashboard elements",
-        "Zakat & Sadaqah calculation UI flows",
-        "Campaign performance metric visualizations",
+        "Main alkhidmat.org website runs on Next.js (not WordPress)",
+        "Actively contributing to the upcoming redesign being built in React",
+        "Refactoring undocumented legacy code under senior developer supervision",
+        "Full Git/GitHub workflow adherence with strict peer review and clean PR standards",
       ],
     },
   ],
 };
 
 export const BAZAURA_DETAILS = {
-  title: "Bazaura — bazaura.pk",
-  subtitle: "Full-Funnel Digital Operations Case Study",
+  title: "Bazaura.pk & Client Operations",
+  subtitle: "Full-Stack Rebuild & E-Commerce Operations Case Study",
   metrics: [
-    { label: "Platform", value: "WooCommerce + WordPress" },
-    { label: "Ad Channels", value: "Meta + TikTok" },
-    { label: "Domain", value: "bazaura.pk" },
-    { label: "Role", value: "Brand Manager & Venture Lead" },
+    { label: "Web Architecture", value: "Next.js Web App" },
+    { label: "Mobile Platform", value: "React Native (iOS/Android)" },
+    { label: "Backend Layer", value: "Python + SQL" },
+    { label: "Role", value: "Freelance Full-Stack Developer" },
   ],
   pipelines: [
-    "Domain routing & DNS management for bazaura.pk",
-    "WooCommerce product catalog optimization",
-    "Meta Ads Manager campaign structuring",
-    "TikTok Ads creative asset pipelines",
-    "Landing page conversion rate optimization",
-    "Cross-platform social content distribution",
+    "Three-repo architecture: Next.js web (`bazaura.pk-next-js-web`), React Native mobile (`bazaura.pk-app`), and shared Python/SQL backend (`python-bazaura-app-backend`)",
+    "WordPress (PHP/ACF) theming and custom fields across multiple client sites since 2024 (Bazaura.pk, WerInvestments, Bella, NoorVerse Academy, Hijazi Collections)",
+    "Day-to-day e-commerce operations: order processing & PostEx courier logistics coordination",
+    "Meta Ads campaign structuring, ROAS tracking, and conversion-focused landing page design",
+    "Built full-stack email-sending app with Mailchimp integration",
+    "Custom AI chatbot built for internal workflow automation using an LLM API",
   ],
 };
 
@@ -159,36 +163,36 @@ export const MERN_ARCHITECTURE: MerArchitectureLayer[] = [
   {
     id: "presentation",
     layer: "Presentation Layer",
-    stack: ["React 19", "Tailwind CSS", "Framer Motion"],
+    stack: ["Next.js", "React 19", "Tailwind CSS", "Framer Motion"],
     description:
-      "Dynamic storefront with server-side rendering hooks, product filtering, and responsive checkout flows.",
+      "Dynamic storefront with server-side rendering, responsive catalog filtering, and accessible checkout flows.",
   },
   {
     id: "api",
     layer: "API Gateway",
-    stack: ["Express.js", "JWT", "Rate Limiting", "CORS"],
+    stack: ["Node.js / Express.js", "Python Backend", "JWT", "REST"],
     description:
-      "RESTful endpoints with authentication middleware, input validation, and structured error responses.",
+      "RESTful endpoints with authentication middleware, rate limiting, and structured error handling.",
   },
   {
     id: "business",
     layer: "Business Logic",
-    stack: ["Node.js", "Mongoose", "Stripe SDK"],
+    stack: ["Node.js / Python", "Order Pipelines", "PostEx Logistics API"],
     description:
-      "Order processing, inventory management, payment webhooks, and admin authorization flows.",
+      "Order processing, courier integration, inventory management, and automated webhook handlers.",
   },
   {
     id: "data",
     layer: "Data Layer",
-    stack: ["MongoDB", "Redis Cache", "GridFS"],
+    stack: ["MongoDB", "SQL", "Database Indexing"],
     description:
-      "Document schemas with indexing strategies, aggregation pipelines, and media asset storage.",
+      "Structured relational and document schemas with indexing strategies and optimized queries.",
   },
   {
     id: "infra",
-    layer: "Infrastructure",
-    stack: ["Docker", "GitHub Actions", "Netlify/Vercel"],
+    layer: "Infrastructure & Tools",
+    stack: ["Git / GitHub", "Vercel / Netlify", "Hostinger / cPanel", "n8n"],
     description:
-      "Containerized deployment with CI/CD automation, environment secrets, and health monitoring.",
+      "Automated continuous delivery, environment secrets isolation, and production health monitoring.",
   },
 ];

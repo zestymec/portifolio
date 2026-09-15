@@ -11,8 +11,14 @@ const ProjectsGridClient = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Projects",
-  description: `${PROFILE.name}'s GitHub repositories — mobile architectures, MERN stack, and production clones.`,
+  title: "Projects | Muhammad Umer Aziz",
+  description:
+    "Explore full-stack platforms, mobile applications, and open-source software repositories engineered by Muhammad Umer Aziz.",
+  openGraph: {
+    title: "Projects | Muhammad Umer Aziz",
+    description:
+      "Explore full-stack platforms, mobile applications, and open-source software repositories engineered by Muhammad Umer Aziz.",
+  },
 };
 
 export default function ProjectsPage() {

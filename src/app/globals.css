@@ -268,13 +268,5 @@ svg {
   height: auto;
 }
 
-/* Bottom padding for sticky hire banner */
-.has-hire-banner {
-  padding-bottom: 7rem;
-}
 
-@media (min-width: 640px) {
-  .has-hire-banner {
-    padding-bottom: 5.5rem;
-  }
-}
+

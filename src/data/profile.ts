@@ -3,26 +3,26 @@ import type { Metric, NavLink, SocialLink } from "@/types";
 export const PROFILE = {
   name: "Muhammad Umer Aziz",
   username: "zestymec",
-  title: "Full-Stack Developer & MLOps Practitioner",
+  title: "Full-Stack Developer",
   tagline:
-    "Building scalable web applications, production pipelines, and high-performance digital systems with modern engineering practices",
+    "Engineering scalable web & mobile platforms, robust backends, and user-centric digital products with modern software standards.",
   email: "m.umer394aziz@gmail.com",
   location: "Lahore, Pakistan",
   signature: "@zestymec",
 } as const;
 
 export const LIVE_STATUS =
-  "⚡ Currently: Scaling MLOps pipelines, building full-stack systems, and bridging production software with modern cloud architectures." as const;
+  "⚡ Currently: Frontend Developer (Contract) at Alkhidmat Foundation, engineering the Bazaura.pk 3-repo full-stack platform, and expanding Python/ML foundations." as const;
 
 export const TYPEWRITER_PHRASES = [
   "Muhammad Umer Aziz",
-  "Full-Stack Software Engineer",
-  "MLOps & Infrastructure Builder",
-  "React Native & Next.js Architect",
-  "Ex-Alkhidmat Dev Intern",
-  "Startup Operator @ Bazaura",
-  "Systems & Automation Enthusiast",
-  "Code & Japanese Language Learner",
+  "Full-Stack Developer",
+  "Frontend Developer (Contract) @ Alkhidmat",
+  "React Native & Next.js Builder",
+  "Freelance Full-Stack Developer",
+  "BSCS Student @ Virtual University",
+  "Python & ML Enthusiast",
+  "189+ Day Japanese Streak",
 ] as const;
 
 export const NAV_LINKS: NavLink[] = [
@@ -40,73 +40,59 @@ export const SOCIAL_LINKS: SocialLink[] = [
     name: "Email",
     href: "mailto:m.umer394aziz@gmail.com",
     username: "m.umer394aziz@gmail.com",
-    color: "#ff007a",
+    color: "#c4f042",
   },
   {
     id: "linkedin",
     name: "LinkedIn",
     href: "https://linkedin.com/in/zestymec",
-    username: "/in/zestymec",
+    username: "in/zestymec",
     color: "#0a66c2",
   },
   {
     id: "github",
     name: "GitHub",
     href: "https://github.com/zestymec",
-    username: "/zestymec",
+    username: "zestymec (72 repos, 640+ contribs)",
     color: "#f0f6fc",
   },
   {
-    id: "pinterest",
-    name: "Pinterest",
-    href: "https://pinterest.com/zestymec",
-    username: "@zestymec",
-    color: "#e60023",
-  },
-  {
-    id: "twitter",
-    name: "X / Twitter",
-    href: "https://twitter.com/zestymec",
-    username: "@zestymec",
-    color: "#1da1f2",
-  },
-  {
-    id: "instagram",
-    name: "Instagram",
-    href: "https://instagram.com/zestymec",
-    username: "@zestymec",
-    color: "#e1306c",
+    id: "kaggle",
+    name: "Kaggle",
+    href: "https://kaggle.com/zestymec",
+    username: "zestymec",
+    color: "#20beff",
   },
 ];
 
 export const METRICS: Metric[] = [
-  { id: "views", label: "Breakout Video Views", value: "136", suffix: "K+", icon: "zap" },
-  { id: "mobile", label: "Mobile Modules Built", value: "12", suffix: "+", icon: "mobile" },
-  { id: "languages", label: "Languages Explored", value: "3", icon: "globe" },
-  { id: "stacks", label: "Core Tech Stacks", value: "3", suffix: "+", icon: "layers" },
-  { id: "experience", label: "Years Engineering", value: "1", suffix: "+", icon: "code" },
-  { id: "donors", label: "Users & Donors Impacted", value: "10", suffix: "K+", icon: "users" },
+  { id: "repos", label: "GitHub Repositories", value: "72", suffix: "+", icon: "code" },
+  { id: "contribs", label: "Contributions (1 Year)", value: "640", suffix: "+", icon: "zap" },
+  { id: "views", label: "Breakout Reel Views", value: "136", suffix: "K+", icon: "layers" },
+  { id: "streak", label: "Japanese Streak (Days)", value: "189", suffix: "+", icon: "globe" },
+  { id: "components", label: "AKFP Components Shipped", value: "15", suffix: "+", icon: "mobile" },
+  { id: "stacks", label: "Core Mastered Stacks", value: "3", suffix: "+", icon: "users" },
 ];
 
 export const HUB_CARDS = [
   {
     href: "/about",
     title: "About Me",
-    desc: "Tech philosophy, background, languages & engineering mindset",
+    desc: "Software engineering mindset, academic ledger, language journey & background",
   },
   {
     href: "/experience",
     title: "Experience",
-    desc: "Alkhidmat Foundation, Bazaura.pk operations & full-stack development",
+    desc: "Alkhidmat Foundation (Contract + Intern) & Freelance Client Platforms",
   },
   {
     href: "/projects",
     title: "Projects",
-    desc: "Production repos, MLOps pipelines, and web systems",
+    desc: "Bazaura.pk 3-repo platform, AKFP Fundraiser, Mobile Apps & Code Repos",
   },
   {
     href: "/beyond-bits",
     title: "Beyond Bits",
-    desc: "Japanese language learning, gaming optimization & content creation",
+    desc: "Japanese streak, street photography, competitive strategy & content creation",
   },
-] as const;
+] as const;

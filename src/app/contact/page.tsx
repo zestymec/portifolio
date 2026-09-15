@@ -3,8 +3,14 @@ import { ContactGateway } from "@/components/contact/ContactGateway";
 import { PROFILE } from "@/data/profile";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Get in touch with ${PROFILE.name} — collaboration terminal and project blueprint forms.`,
+  title: "Contact & CV | Muhammad Umer Aziz",
+  description:
+    "Get in touch with Muhammad Umer Aziz — download verified CV, initiate technical collaborations, or discuss engineering roles.",
+  openGraph: {
+    title: "Contact & CV | Muhammad Umer Aziz",
+    description:
+      "Get in touch with Muhammad Umer Aziz — download verified CV, initiate technical collaborations, or discuss engineering roles.",
+  },
 };
 
 export default function ContactPage() {
