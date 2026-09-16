@@ -25,6 +25,7 @@ export interface SocialLink {
   href: string;
   username: string;
   color: string;
+  isPlaceholder?: boolean;
 }
 
 export interface Metric {

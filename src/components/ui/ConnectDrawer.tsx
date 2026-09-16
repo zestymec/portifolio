@@ -8,6 +8,10 @@ import {
   FaLinkedin,
   FaPinterest,
   FaXTwitter,
+  FaKaggle,
+  FaReddit,
+  FaFacebook,
+  FaTiktok,
 } from "react-icons/fa6";
 import { Mail } from "lucide-react";
 import Image from "next/image";
@@ -28,11 +32,31 @@ const SOCIAL_ICONS: Record<
   linkedin: FaLinkedin,
   instagram: FaInstagram,
   twitter: FaXTwitter,
+  x: FaXTwitter,
+  kaggle: FaKaggle,
+  reddit: FaReddit,
+  facebook: FaFacebook,
+  tiktok: FaTiktok,
   pinterest: FaPinterest,
 };
 
 function SocialIcon({ link }: { link: SocialLink }) {
-  const Icon = SOCIAL_ICONS[link.id];
+  const Icon = SOCIAL_ICONS[link.id] ?? Mail;
+  const isPlaceholder = Boolean(link.isPlaceholder || link.href === "#");
+
+  if (isPlaceholder) {
+    return (
+      <div className="flex items-center gap-3 rounded-2xl border-2 border-white/5 bg-white/[0.01] p-3 opacity-40">
+        <Icon className="h-5 w-5 text-muted" />
+        <div className="flex min-w-0 flex-col">
+          <span className="text-sm font-medium text-foreground tracking-tighter">
+            {link.name} (Coming Soon)
+          </span>
+          <span className="truncate text-xs text-muted">Awaiting handle</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.a
@@ -41,8 +65,8 @@ function SocialIcon({ link }: { link: SocialLink }) {
       rel={link.id === "email" ? undefined : "noopener noreferrer"}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.03, y: -2 }}
+      whileTap={{ scale: 0.97 }}
       transition={SPRING_ORGANIC}
       className="connect-social-link group cursor-pointer hover:opacity-90"
       style={{ "--social-color": link.color } as React.CSSProperties}
@@ -55,9 +79,7 @@ function SocialIcon({ link }: { link: SocialLink }) {
         });
       }}
     >
-      {Icon && (
-        <Icon className="h-5 w-5 transition-colors group-hover:text-[var(--social-color)]" />
-      )}
+      <Icon className="h-5 w-5 transition-colors group-hover:text-[var(--social-color)]" />
       <div className="flex min-w-0 flex-col">
         <span className="text-sm font-medium text-foreground tracking-tighter">
           {link.name}

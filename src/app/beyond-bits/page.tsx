@@ -9,8 +9,14 @@ const BeyondBitsTabs = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Beyond Bits",
-  description: `${PROFILE.signature}'s lifestyle ecosystem — photography, content creation, gaming, and languages.`,
+  title: "Beyond Bits | Muhammad Umer Aziz",
+  description:
+    "Creative pursuits of Muhammad Umer Aziz — 189+ day Japanese learning streak, street photography, cinematic video production (136K+ views), and competitive gaming.",
+  openGraph: {
+    title: "Beyond Bits | Muhammad Umer Aziz",
+    description:
+      "Creative pursuits of Muhammad Umer Aziz — 189+ day Japanese learning streak, street photography, cinematic video production (136K+ views), and competitive gaming.",
+  },
 };
 
 export default function BeyondBitsPage() {

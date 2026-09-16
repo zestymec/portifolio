@@ -2,7 +2,16 @@
 
 import { motion } from "framer-motion";
 import { Mail, FileText, Download, CheckCircle2 } from "lucide-react";
-import { FaGithub, FaLinkedin, FaKaggle } from "react-icons/fa6";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaKaggle,
+  FaInstagram,
+  FaXTwitter,
+  FaReddit,
+  FaFacebook,
+  FaTiktok,
+} from "react-icons/fa6";
 import { useState, useCallback } from "react";
 import toast from "react-hot-toast";
 import confetti from "canvas-confetti";
@@ -17,12 +26,22 @@ import { cn } from "@/lib/utils";
 
 type FormTab = "collaboration" | "blueprint";
 
-const CONTACT_CHANNELS = [
-  { id: "email", icon: Mail, color: "text-[#C4F042]" },
-  { id: "linkedin", icon: FaLinkedin, color: "text-blue-400" },
-  { id: "github", icon: FaGithub, color: "text-foreground" },
-  { id: "kaggle", icon: FaKaggle, color: "text-[#20beff]" },
-] as const;
+const CONTACT_CHANNELS: Record<
+  string,
+  { icon: React.ComponentType<{ className?: string }>; color: string }
+> = {
+  email: { icon: Mail, color: "text-[#C4F042]" },
+  linkedin: { icon: FaLinkedin, color: "text-blue-400" },
+  github: { icon: FaGithub, color: "text-foreground" },
+  kaggle: { icon: FaKaggle, color: "text-[#20beff]" },
+  instagram: { icon: FaInstagram, color: "text-[#e1306c]" },
+  x: { icon: FaXTwitter, color: "text-foreground" },
+  reddit: { icon: FaReddit, color: "text-[#ff4500]" },
+  // TODO: Replace with real Facebook profile URL when provided by Umer
+  facebook: { icon: FaFacebook, color: "text-[#1877f2]" },
+  // TODO: Replace with real TikTok handle/URL when provided by Umer
+  tiktok: { icon: FaTiktok, color: "text-[#fe2c55]" },
+};
 
 export function ContactGateway() {
   const [activeForm, setActiveForm] = useState<FormTab>("collaboration");
@@ -122,8 +141,30 @@ export function ContactGateway() {
               </p>
               <div className="mt-6 space-y-3">
                 {SOCIAL_LINKS.map((link) => {
-                  const channel = CONTACT_CHANNELS.find((c) => c.id === link.id);
+                  const channel = CONTACT_CHANNELS[link.id];
                   const Icon = channel?.icon ?? Mail;
+                  const isPlaceholder = Boolean(link.isPlaceholder || link.href === "#");
+
+                  if (isPlaceholder) {
+                    return (
+                      <div
+                        key={link.id}
+                        className="flex items-center gap-3 rounded-2xl border-2 border-white/5 bg-white/[0.01] p-3 opacity-50 sm:p-4"
+                      >
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/5 text-muted sm:h-10 sm:w-10">
+                          <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="text-sm font-semibold text-foreground">
+                            {link.name}{" "}
+                            <span className="text-[10px] font-normal text-muted">(Pending handle)</span>
+                          </p>
+                          <p className="truncate text-xs text-muted">Awaiting handle</p>
+                        </div>
+                      </div>
+                    );
+                  }
+
                   return (
                     <a
                       key={link.id}

@@ -63,6 +63,45 @@ export const SOCIAL_LINKS: SocialLink[] = [
     username: "zestymec",
     color: "#20beff",
   },
+  {
+    id: "instagram",
+    name: "Instagram",
+    href: "https://instagram.com/zestymec",
+    username: "@zestymec",
+    color: "#e1306c",
+  },
+  {
+    id: "x",
+    name: "X (Twitter)",
+    href: "https://x.com/zestymec",
+    username: "@zestymec",
+    color: "#ffffff",
+  },
+  {
+    id: "reddit",
+    name: "Reddit",
+    href: "https://reddit.com/user/zestymec",
+    username: "u/zestymec",
+    color: "#ff4500",
+  },
+  {
+    // TODO: Replace with real Facebook profile URL when provided by Umer
+    id: "facebook",
+    name: "Facebook",
+    href: "#",
+    username: "Pending handle",
+    color: "#1877f2",
+    isPlaceholder: true,
+  },
+  {
+    // TODO: Replace with real TikTok handle/URL when provided by Umer
+    id: "tiktok",
+    name: "TikTok",
+    href: "#",
+    username: "Pending handle",
+    color: "#fe2c55",
+    isPlaceholder: true,
+  },
 ];
 
 export const METRICS: Metric[] = [
